@@ -2,7 +2,7 @@
     $con = mysqli_connect("localhost","root","","rvmdatabase");
     $response = array();
     if($con){
-        $sql = "select * from rvmtable";
+        $sql = "select * from rvmtable2";
         $result = mysqli_query($con,$sql);
         if($result){
             header("Content-type: JSON");

@@ -16,7 +16,7 @@
     $idnumber = $_POST['idnumber'];
 
     // Update the database to reset values to 0
-    $sql = "UPDATE rvmtable SET bottlesCollected = 0, cansCollected = 0, rewardPts = 0 WHERE idnumber = ?";
+    $sql = "UPDATE rvmtable2 SET bottlesCollected = 0, cansCollected = 0, rewardPts = 0 WHERE idnumber = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $idnumber);
 

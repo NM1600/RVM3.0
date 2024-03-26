@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $idnumber = $_POST['idnumber'];
 
-    $sql = "SELECT * FROM rvmtable WHERE idnumber='$idnumber'";
+    $sql = "SELECT * FROM rvmtable2 WHERE idnumber='$idnumber'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) == 1) {

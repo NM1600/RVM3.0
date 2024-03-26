@@ -106,7 +106,7 @@
                 }
 
                 // Query to fetch idnumber from studtable
-                $sql = "SELECT idnumber FROM rvmtable";
+                $sql = "SELECT idnumber FROM rvmtable2";
                 $result = $conn->query($sql);
 
                 // Display idnumbers in table rows
@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["addUser_btn"])) {
         }
 
         // Check if the ID number already exists
-        $check_query = "SELECT idnumber FROM rvmtable WHERE idnumber = ?";
+        $check_query = "SELECT idnumber FROM rvmtable2 WHERE idnumber = ?";
         $check_stmt = $conn->prepare($check_query);
         if ($check_stmt) {
             $check_stmt->bind_param("s", $idnumber);
@@ -165,7 +165,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["addUser_btn"])) {
                 echo "<script>alert('ID Number is already registered');</script>";
             } else {
                 // Prepare and bind the SQL statement to insert the ID number
-                $insert_query = "INSERT INTO rvmtable (idnumber) VALUES (?)";
+                $insert_query = "INSERT INTO rvmtable2 (idnumber) VALUES (?)";
                 $insert_stmt = $conn->prepare($insert_query);
                 if ($insert_stmt) {
                     $insert_stmt->bind_param("s", $idnumber);

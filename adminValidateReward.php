@@ -124,7 +124,7 @@
                     }
 
                     // Query to fetch data from qrdata table
-                    $sql = "SELECT scan_idnumber, scan_bottlesCollected, scan_cansCollected, scan_rewardPts, scan_unique FROM rvmtable";
+                    $sql = "SELECT scan_idnumber, scan_bottlesCollected, scan_cansCollected, scan_rewardPts, scan_unique FROM rvmtable3";
                     $result = $conn->query($sql);
 
                     // Display data in table rows

@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Check if the unique identifier already exists in the database
-        $checkQuery = "SELECT * FROM rvmtable WHERE scan_unique = ?";
+        $checkQuery = "SELECT * FROM rvmtable3 WHERE scan_unique = ?";
         $checkStmt = $conn->prepare($checkQuery);
         $checkStmt->bind_param("s", $scan_unique);
         $checkStmt->execute();
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         } else {
             // Prepare and bind the SQL statement
-            $stmt = $conn->prepare("INSERT INTO rvmtable (scan_idnumber, scan_bottlesCollected, scan_cansCollected, scan_rewardPts, scan_date, scan_unique) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO rvmtable3 (scan_idnumber, scan_bottlesCollected, scan_cansCollected, scan_rewardPts, scan_date, scan_unique) VALUES (?, ?, ?, ?, ?, ?)");
 
             // Bind parameters
             $stmt->bind_param("ssssss", $scan_idnumber, $scan_bottlesCollected, $scan_cansCollected, $scan_rewardPts, $scan_date, $scan_unique);

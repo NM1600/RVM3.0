@@ -135,7 +135,7 @@
                 }
 
                 // Prepare and bind the SQL query to fetch data of the logged-in user
-                $sql = "SELECT idnumber, bottlesCollected, cansCollected, rewardPts FROM rvmtable WHERE idnumber = ?";
+                $sql = "SELECT idnumber, bottlesCollected, cansCollected, rewardPts FROM rvmtable2 WHERE idnumber = ?";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("s", $_SESSION["idnumber"]);
                 $stmt->execute();
